@@ -1,36 +1,24 @@
-# Pokédex Angular
+# Pokédex — Despliegue en Azure 
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![codecov](https://codecov.io/gh/keilermora/pokedex-angular/branch/master/graph/badge.svg?token=9E0D28IOFT)](https://codecov.io/gh/keilermora/pokedex-angular)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+## Pasos de despliegue
 
-[https://keilermora.github.io/pokedex-angular/](https://keilermora.github.io/pokedex-angular/)
+1. **Registro en Azure**
+   Ingresar a [azure.microsoft.com](https://azure.microsoft.com/es-es/free/students) y hacer clic en
+   "Empiece gratis". Me auntentiqúé con una cuenta personal
+    para activar la cuenta.
 
-La aplicación muestra el listado y el detalle de los Pokémon de las primeras 3 generaciones.
+2. **Canjear créditos**
+   Una vez activa la cuenta, activé los 200 créditos.
+   
 
-La imagen que representa un Pokémon en el listado muestra las variaciones que estos tuvieron durante las primeras versiones, desde la versión Green (1996) hasta la version Emerald (2005).
+3. **Repositorio en GitHub**
+   Crear un repositorio público llamado `pokedexsdla` en GitHub. Clonar el repositorio de forma
+   local, copiar el proyecto suministrado por el profesor y hacer push a la rama `main` para
+   tener el código disponible en la nube.
 
-Los detalles de un Pokémon individual muestra sus estadísticas base y los registros de la Pokédex de las diferentes versiones.
-
-El proyecto fue desarrollado usando la librería de JavaScript [Angular](https://angular.io/) para crear la interfaz de usuario, en comunicación con la Api RESTful [PokéAPI](https://pokeapi.co/).
-
-## Requisitos mínimos
-
-- [Nodejs](https://nodejs.org) con soporte de largo plazo (LTS).
-- Un navegador web
-
-## Ambiente de pruebas
-
-Ejecutar en la raíz del proyecto:
-
-```
-npm start
-```
-
-## Referencias
-
-- [Angular](https://angular.io/): One framework.
-- [Angular Folder Structure](https://angular-folder-structure.readthedocs.io/en/latest/): Create a skeleton structure which is flexible for projects big or small.
-- [Font Awesome](https://fontawesome.com/): The web's most popular icon set and toolkit.
-- [Normalize.css](https://necolas.github.io/normalize.css/): A modern, HTML5-ready alternative to CSS resets.
-- [PokéAPI](https://pokeapi.co/): The RESTful Pokémon API.
+4. **Despliegue en Azure**
+   Ingresar al [Portal de Azure](https://portal.azure.com) y seleccionar "Crear un recurso".
+   Buscar **Static Web App**, completar el formulario con los datos del proyecto y vincular la
+   cuenta de GitHub para que Azure tenga acceso al repositorio `pokedexsdla`. Seleccionar la
+   rama `main` y configurar los parámetros de build. Al finalizar, Azure genera automáticamente
+   un pipeline de CI/CD con GitHub Actions que despliega la aplicación en cada nuevo commit.
